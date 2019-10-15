@@ -84,6 +84,6 @@ function removeDuplicates(array, cb) {
   return cb(array.filter((unique, ind)=> array.indexOf(unique)==ind ))
 }
 
-const item2 = [1,2,3,4,5,1,6]
+const item2 = ['milk', 'flour', 'egg','sugar','milk']
 const dupnomore = removeDuplicates(item2, derpo  => derpo)
 console.log(dupnomore)
