@@ -29,17 +29,15 @@ const counterMaker = () => {
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
   let count = 0;
-  const counter = () => {
-    count++;
-    return count;
+  return function(){
+    return ++count;
   }
-  return counter()
 };
 
 const myCounter = counterMaker()
-console.log(myCounter)
-console.log(myCounter)
-console.log(myCounter)
+console.log(myCounter())
+console.log(myCounter())
+console.log(myCounter())
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -47,6 +45,23 @@ console.log(myCounter)
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
+const counterMaker2 = () => {
+  let count = 49;
+  return function(){
+    if (count < 50){
+      return ++count;
+    }
+    else{
+      count = 0;
+      return ++count;
+    }
+  }
+}
+
+const myCounter2 = counterMaker2()
+console.log(myCounter2())
+console.log(myCounter2())
+console.log(myCounter2())
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
