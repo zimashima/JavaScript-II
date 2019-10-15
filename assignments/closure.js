@@ -3,6 +3,18 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function erMaGherd(){
+  const closure1 = 'Chocolate'
+  const closure2 = 'Cheesecake'
+  console.log(`Do you want some ${closure1} ${closure2}`)
+  function myOhMy(){
+    const closure3 = 'Vanilla'
+    console.log( `No, thank you. Do you have any ${closure3} ${closure2}?`)
+  }
+  myOhMy();
+}
+erMaGherd()
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
