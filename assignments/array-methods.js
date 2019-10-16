@@ -63,8 +63,7 @@ console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
-let firstNamesAllCaps = [];
-runners.forEach(runner => firstNamesAllCaps.push(runner.first_name.toUpperCase()))
+firstNamesAllCaps = runners.map(runner => runner.first_name.toUpperCase());
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
@@ -77,7 +76,7 @@ console.log(runnersLargeSizeShirt);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
 ticketPriceTotal = runners.reduce((accumulator, runner) => {return accumulator + runner.donation},0);
-console.log(ticketPriceTotal);
+console.log(`Combined Ticket Price is ${ticketPriceTotal}`);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
@@ -85,7 +84,7 @@ console.log(ticketPriceTotal);
 // Problem 1; How many people donate more than 100?
 let moreThanAHundred = []
 moreThanAHundred = runners.filter(runner => runner.donation >100)
-console.log(moreThanAHundred.length)
+console.log(`${moreThanAHundred.length} people donated more than 100`)
 
 // Problem 2: Get the last name and arrange it alphabetically
 let lastName = []
