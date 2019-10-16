@@ -98,4 +98,4 @@ let LessThanAHundred = [];
 LessThanAHundred = runners.filter(runner => runner.donation < 100)
 let totalLess = 0;
 totalLess = LessThanAHundred.reduce((accumulator, runner) => {return accumulator + runner.donation},0);
-console.log(totalLess)
+console.log(`There are ${LessThanAHundred.length} people that donated less than 100 and this is the total of their donation combined ${totalLess}`)
